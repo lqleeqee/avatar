@@ -1,0 +1,61 @@
+#hadoop
+fs.default.name=hdfs://node1029.vipcloud:9000
+mapred.job.tracker=node1029.vipcloud:9001
+io.compression.codecs=org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.BZip2Codec
+##hbase
+hbase.rootdir=hdfs://node1029.vipcloud:9000/mr_hbase
+zookeeper.znode.parent=/mr_hbase
+hbase.zookeeper.quorum=node600.vipcloud,node601.vipcloud,node602.vipcloud,node603.vipcloud,node604.vipcloud
+#
+## zookeeper
+zookeeper.hquorum.peer=node600.vipcloud,node601.vipcloud,node602.vipcloud,node603.vipcloud,node604.vipcloud
+zookeeper.session.timeout=5000
+zookeeper.connection.timeout=20000
+online.znode.path=/vipcloud/onlinedata
+solr.zk.root=/solr
+#
+##nosql hadoop version
+## nosql hadoop version just only three item, one is 'hadoop1', 
+## two is 'hadoop2', three is 'both', default is 'hadoop1'
+cqvip.nosql.hadoop.version=hadoop1
+#
+##distcp platforms
+dst_hadoop.distcp=true
+## distcp platform just only three item. 1 & defalut is 'hadoop1'; 2 is 'hadoop2';
+## 3 is 'both', hadoop1 & hadoop2 need exec.
+cqvip.nosql.distcp.platform=hadoop1
+#
+##distcp_cluster
+dst_fs.default.name=hdfs://node20.vipcloud:9000
+dst_mapred.job.tracker=node20.vipcloud:9001
+dst_hadoop.distcp.src=hdfs://node1029.vipcloud:9000//VipProcessData/HRegion
+dst_hadoop.distcp.dst=hdfs://node20.vipcloud:9000//VipProcessData/HRegion
+dst_hbase.rootdir=hdfs://node20.vipcloud:9000/nosql_hbase
+dst_zookeeper.znode.parent=/nosql_hbase
+dst_zookeeper.hquorum.peer=node600.vipcloud,node601.vipcloud,node602.vipcloud,node603.vipcloud,node604.vipcloud
+dst_zookeeper.session.timeout=5000
+dst_zookeeper.connection.timeout=20000
+dst_online.znode.path=/vipcloud/onlinedata
+dst_hbase.zookeeper.quorum=node600.vipcloud,node601.vipcloud,node602.vipcloud,node603.vipcloud,node604.vipcloud
+dst_mapred.job.map.memory.mb=2048
+dst_mapred.job.reduce.memory.mb=2048
+dst_hadoop2=false
+#distcp_cluster
+solr.node.id=-999
+change.node.one.time=20
+
+pr.wordseg.path=/lizujun/ictclas
+pr.uniq.paper.jobname=high_quality_papers
+pr.paper.meta=/VipProcessData/BasicObject/TitleObject
+pr.uniq.paper=/lizujun/pr/doc/upaper
+
+pr.paper.graph.jobname=paper_graph
+pr.paper.graph=/lizujun/pr/doc/graph
+
+pr.paper.join.jobname=paper_join
+pr.paper.join=/lizujun/pr/doc/join
+max.join.len=200
+
+pr.hq.paper.jobname=hq_paper_meta
+pr.hq.paper=/lizujun/pr/doc/final
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		<jobs>
+		<hbase name="recommendation 2 hbase" hbasename="user_recommendation_info" regions="10" input="/lizujun/pr/user/workspace/18ee4202-2f14-4526-8e77-136ec0dccc23" method="create_hfile"/>
+		</jobs>
